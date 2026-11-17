@@ -1,0 +1,50 @@
+/* Floats on top of the hero (the shared background trick) */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-block: 1.25rem;
+  color: var(--color-white);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
+.logoText {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+/* Pushes everything after it to the right */
+.nav {
+  margin-right: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.875rem;
+}
+
+.link:hover {
+  opacity: 0.8;
+}

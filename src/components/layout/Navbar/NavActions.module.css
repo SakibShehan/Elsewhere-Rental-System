@@ -1,0 +1,47 @@
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-black, #000000);
+}
+
+/* Search and heart buttons */
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+}
+
+.iconButton img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0); /* makes the icon black */
+}
+
+.iconButton:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Saved (n) button */
+.savedButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  color: var(--color-black, #000000);
+  border: 1px solid var(--color-black, #000000);
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+}
+
+.savedButton img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0);
+}
+
+.savedButton:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
