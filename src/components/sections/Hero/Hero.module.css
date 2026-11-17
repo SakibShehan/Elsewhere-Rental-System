@@ -1,7 +1,9 @@
 .hero {
+  --hero-text: var(--color-white); /* change this one line to recolor the hero text */
   position: relative;
-  min-height: 640px;
+  min-height: 680px;
   overflow: hidden;
+  color: var(--hero-text);
 }
 
 /* Image fills the whole hero */
@@ -9,11 +11,11 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 110%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Dark gradient so white text stays readable */
+/* Dark gradient so text stays readable */
 .overlay {
   position: absolute;
   inset: 0;
@@ -23,4 +25,90 @@
     rgba(11, 22, 38, 0.1) 40%,
     rgba(11, 22, 38, 0.35) 100%
   );
+}
+
+/* Content sits above the image and overlay */
+.content {
+  position: relative;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
+/* Heading block: as wide as its text, with the text centered inside it */
+.heading {
+  width: fit-content;
+  margin-bottom: 2.25rem;
+  text-align: center;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.title {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-style: italic;
+}
+
+.accent {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+/* Small mouse icon at the bottom of the hero */
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: 6rem;
+  translate: -50% 0;
+  width: 22px;
+  height: 34px;
+  border: 1.5px solid currentColor;
+  border-radius: 12px;
+  opacity: 0.8;
+}
+
+.scrollHint::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  translate: -50% 0;
+  width: 3px;
+  height: 7px;
+  border-radius: 2px;
+  background: currentColor;
+  animation: scroll-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Users who turn off animations get a still icon */
+@media (prefers-reduced-motion: reduce) {
+  .scrollHint::after {
+    animation: none;
+  }
 }
