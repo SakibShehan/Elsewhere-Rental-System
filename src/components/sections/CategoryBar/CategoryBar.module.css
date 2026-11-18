@@ -1,0 +1,36 @@
+/* Pulled up so the bar sits half on the hero photo */
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: -3rem;
+}
+
+.bar {
+  padding: 0.5rem;
+  background: var(--color-white);
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* One equal column per item, however many there are */
+.list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(140px, 1fr);
+  overflow-x: auto;
+}
+
+.cell {
+  position: relative;
+}
+
+/* Short divider line between items */
+.cell + .cell::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 0;
+  width: 1px;
+  background: var(--color-border);
+}

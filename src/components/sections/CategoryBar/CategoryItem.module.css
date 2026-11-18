@@ -1,0 +1,36 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1.1rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: background 0.2s ease;
+}
+
+.item:hover {
+  background: var(--color-cream);
+}
+
+/* Visible ring when navigating with the keyboard */
+.item:focus-visible {
+  outline: 2px solid var(--color-navy-900);
+  outline-offset: -2px;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0); /* makes the icon black */
+  opacity: 0.75;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}

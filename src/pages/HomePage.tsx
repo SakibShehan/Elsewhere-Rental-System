@@ -1,6 +1,8 @@
 import Hero from '@/components/sections/Hero/Hero'
 import styles from './HomePage.module.css'
 import Navbar from '@/components/layout/Navbar/Navbar'
+import CategoryBar from '@/components/sections/CategoryBar/CategoryBar'
+
 
 function HomePage() {
   return (
@@ -8,6 +10,7 @@ function HomePage() {
          <Navbar />
       <main>
         <Hero />
+        <CategoryBar />
       </main>
     </div>
   )
