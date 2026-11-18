@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar/Navbar'
 import CategoryBar from '@/components/sections/CategoryBar/CategoryBar'
 import PeacefulEscapes from '@/components/sections/PeacefulEscapes/PeacefulEscapes'
 import InspirationBanner from '@/components/sections/InspirationBanner/InspirationBanner'
+import Footer from '@/components/layout/Footer/Footer'
 
 
 function HomePage() {
@@ -15,6 +16,7 @@ function HomePage() {
         <CategoryBar />
          <PeacefulEscapes />
               <InspirationBanner />
+              <Footer/>
       </main>
     </div>
   )

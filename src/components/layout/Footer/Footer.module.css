@@ -1,0 +1,137 @@
+.footer {
+  background: var(--color-navy-900);
+  color: var(--color-white);
+  /* border-radius: var(--radius-lg) var(--radius-lg) 0 0; */
+  max-height: 150%;
+}
+
+/* Same width rules as the other wide sections, so the edges line up */
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1760px;
+  margin-inline: auto;
+  height: 200%;
+  padding: 2rem clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* makes the icon white */
+}
+
+.logoText {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+/* Email pill with the button inside */
+.form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 1 26rem;
+  min-width: 260px;
+  padding: 0.3rem 0.3rem 0.3rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-pill);
+}
+
+/* The input has no outline, so the whole pill shows the focus */
+.form:focus-within {
+  border-color: var(--color-white);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-white);
+  font-size: 0.875rem;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.button {
+  flex-shrink: 0;
+  padding: 0.6rem 1.3rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-cream);
+  color: var(--color-navy-900);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.button:hover {
+  background: var(--color-white);
+}
+
+/* Social icons, pushed to the far right */
+.social {
+  display: flex;
+  gap: 0.6rem;
+  margin-left: auto;
+}
+
+.socialLink {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-cream);
+}
+
+.socialLink:hover {
+  background: var(--color-white);
+}
+
+.socialIcon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0); /* makes the icon black */
+}
+
+/* Smaller screens: let the parts wrap onto new lines */
+@media (max-width: 1000px) {
+  .inner {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .form {
+    flex: 1 1 100%;
+  }
+
+  .social {
+    margin-left: 0;
+  }
+}
