@@ -1,0 +1,32 @@
+.button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.08);
+  background: var(--color-white);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-navy-900);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Outline heart is made black; the filled heart keeps its own color */
+.outline {
+  filter: brightness(0);
+}

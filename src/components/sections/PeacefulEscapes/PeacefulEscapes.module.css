@@ -1,0 +1,65 @@
+.section {
+  padding-block: 4rem;
+  padding-inline: clamp(1.5rem, 2.5vw, 2rem); /* room for half of the button on the right */
+}
+
+/* Left: text. Right: cards. */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1760px;
+  margin-inline: auto;
+}
+
+/* Reference box for the button */
+.carousel {
+  position: relative;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Round arrow: half over the last card, vertically centered */
+.next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  transform: translate(50%, -50%);
+  transition: transform 0.15s ease;
+}
+
+.next img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0); /* makes the arrow black */
+}
+
+.next:hover {
+  transform: translate(50%, -50%) scale(1.08);
+}
+
+.next:focus-visible {
+  outline: 2px solid var(--color-navy-900);
+  outline-offset: 2px;
+}
+
+/* Stack the columns on smaller screens */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

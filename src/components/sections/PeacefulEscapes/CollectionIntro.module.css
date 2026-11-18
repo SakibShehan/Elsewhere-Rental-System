@@ -1,0 +1,40 @@
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+.description {
+  margin-top: 1rem;
+  max-width: 22ch;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-navy-900);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: var(--color-navy-800);
+}
+
+.arrow {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}

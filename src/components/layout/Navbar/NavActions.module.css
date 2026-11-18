@@ -7,6 +7,7 @@
 
 /* Search and heart buttons */
 .iconButton {
+  position: relative; /* the badge is positioned against this */
   display: grid;
   place-items: center;
   width: 40px;
@@ -22,6 +23,24 @@
 
 .iconButton:hover {
   background: rgba(0, 0, 0, 0.08);
+}
+
+/* Count on the top-right corner of the heart */
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: grid;
+  place-items: center;
+  min-width: 16px;
+  height: 16px;
+  padding-inline: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-navy-900);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 /* Saved (n) button */

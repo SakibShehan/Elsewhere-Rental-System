@@ -15,7 +15,15 @@ function NavActions() {
         <img src={searchIcon} alt="" />
       </button>
 
-      <button type="button" className={styles.iconButton} aria-label="Favorites">
+      <button
+        type="button"
+        className={styles.iconButton}
+        aria-label={
+          savedCount > 0 ? `Favorites, ${savedCount} saved` : 'Favorites'
+        }
+      >
+                {savedCount > 0 && <span className={styles.badge}>{savedCount}</span>}
+
         <img src={heartIcon} alt="" />
       </button>
 
