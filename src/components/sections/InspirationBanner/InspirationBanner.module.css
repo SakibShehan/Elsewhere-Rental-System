@@ -1,0 +1,142 @@
+.section {
+  padding-block: 1rem 4rem;
+  padding-inline: clamp(1.5rem, 2.5vw, 2rem); /* same as Peaceful Escapes, so the edges line up */
+}
+
+.banner {
+  position: relative;
+  max-width: 1760px; /* same as Peaceful Escapes */
+  min-height: 280px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  color: var(--color-white);
+  isolation: isolate;
+}
+
+/* Layer 1: photos, stacked, only the active one shows */
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.imageActive {
+  opacity: 1;
+}
+
+/* Layer 2: dark on the left so the text is readable */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 22, 38, 0.65) 0%,
+    rgba(11, 22, 38, 0.15) 55%,
+    transparent 100%
+  );
+}
+
+/* Layer 3: text and controls */
+.content {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vw, 2.5rem);
+  left: clamp(1.5rem, 4vw, 3rem);
+  max-width: 32rem;
+  animation: fade-up 0.6s ease both;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.title {
+  margin-top: 0.6rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-style: italic;
+  text-wrap: balance;
+}
+
+.link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.controls {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 2.5rem);
+  bottom: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.counter {
+  margin-right: 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.round {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+.round:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.round:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+.round img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+/* One arrow icon for both buttons: the back button just flips it */
+.prev img {
+  transform: rotate(180deg);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Users who turn off animations get instant changes */
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+
+  .content {
+    animation: none;
+  }
+}
