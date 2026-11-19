@@ -6,7 +6,7 @@
 /* Left: text. Right: cards. */
 .layout {
   display: grid;
-  grid-template-columns: minmax(220px, 280px) 1fr;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
   width: 100%;
@@ -19,10 +19,27 @@
   position: relative;
 }
 
+/* Always three cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
+}
+
+/* A card that newly appears slides in; cards that stay don't replay it */
+.item {
+  animation: card-in 0.45s ease both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Round arrow: half over the last card, vertically centered */
@@ -60,6 +77,31 @@
 /* Stack the columns on smaller screens */
 @media (max-width: 900px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Phones: one card per row, button centered under the cards */
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .next {
+    top: auto;
+    right: 50%;
+    bottom: -1.5rem;
+    transform: translate(50%, 0);
+  }
+
+  .next:hover {
+    transform: translate(50%, 0) scale(1.08);
+  }
+}
+
+/* Users who turn off animations get instant changes */
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    animation: none;
   }
 }

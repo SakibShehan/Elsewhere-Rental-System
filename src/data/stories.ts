@@ -1,5 +1,5 @@
 import balloonsImage from '@/assets/images/Sunrise Hot Air Balloon Valley.png'
-import forestImage from '@/assets/images/property-1.jpeg'
+import forestImage from '@/assets/images/Moonlit Cottage by the Lake.png'
 import heroImage from '@/assets/images/Santorini Sunset Terrace View.png'
 import type { Story } from '@/types/story'
 
