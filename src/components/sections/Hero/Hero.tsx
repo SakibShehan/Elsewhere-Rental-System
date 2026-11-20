@@ -26,7 +26,8 @@ function Hero() {
       <img className={styles.image} src={heroImage} alt="" />
       <div className={styles.overlay} />
 
-      <div className={`container ${styles.content}`}>
+      {/* <div className={`container ${styles.content}`}> */}
+      <div className={styles.content}>
         <div className={styles.heading}>
           <p className={styles.eyebrow}>Find somewhere extraordinary</p>
           <h1 className={styles.title}>Tell us how you feel…</h1>

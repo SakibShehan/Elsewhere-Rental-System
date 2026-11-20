@@ -1,7 +1,9 @@
 .hero {
   --hero-text: var(--color-white); /* change this one line to recolor the hero text */
   position: relative;
-  min-height: 680px;
+  display: flex;
+  align-items: center; /* content sits in the vertical middle of the hero */
+  min-height: clamp(720px, 60vh, 900px); /* taller: about 92% of the screen height */
   overflow: hidden;
   color: var(--hero-text);
 }
@@ -13,6 +15,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 40%;
 }
 
 /* Dark gradient so text stays readable */
@@ -27,37 +30,41 @@
   );
 }
 
-/* Content sits above the image and overlay */
+/* Content: same left edge as the navbar logo */
 .content {
+  --field-width: min(100%, 1280px); /* how far right the search bar and pills reach */
   position: relative;
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+  width: 100%;
+  max-width: 1760px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+  padding-block: clamp(8rem, 14vh, 12rem); /* more space above and below */
 }
 
 /* Heading block: as wide as its text, with the text centered inside it */
 .heading {
   width: fit-content;
-  margin-bottom: 2.25rem;
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
   text-align: center;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 
 .eyebrow {
-  margin-bottom: 1rem;
-  font-size: 0.7rem;
+  margin-bottom: 1.25rem;
+  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0.9;
 }
 
 .title {
-  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-size: clamp(2.75rem, 6.5vw, 6.5rem); /* bigger on large screens */
 }
 
 .subtitle {
   margin-top: 0.75rem;
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-size: clamp(1.4rem, 3vw, 3rem);
   font-style: italic;
 }
 
@@ -66,6 +73,7 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 8px;
 }
+
 /* Small mouse icon at the bottom of the hero */
 .scrollHint {
   position: absolute;
@@ -103,6 +111,54 @@
   100% {
     opacity: 0;
     transform: translateY(10px);
+  }
+}
+
+/* Tablet and smaller */
+@media (max-width: 1023px) {
+  .hero {
+    min-height: clamp(640px, 80vh, 860px);
+  }
+
+  .content {
+    padding-block: 8rem;
+    --field-width: 100%;
+  }
+
+  .image {
+    object-position: 72% 40%;
+  }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .hero {
+    min-height: 560px;
+  }
+
+  .content {
+    padding-block: 7rem 6.5rem;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.2em;
+  }
+
+  .image {
+    object-position: 78% 35%;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 22, 38, 0.55) 0%,
+      rgba(11, 22, 38, 0.25) 50%,
+      rgba(11, 22, 38, 0.5) 100%
+    );
   }
 }
 

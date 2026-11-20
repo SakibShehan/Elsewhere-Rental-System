@@ -19,10 +19,9 @@
   position: relative;
 }
 
-/* Always three cards */
+/* The number of columns is set in the component */
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
@@ -42,7 +41,7 @@
   }
 }
 
-/* Round arrow: half over the last card, vertically centered */
+/* Round arrow: half over the last visible card, vertically centered */
 .next {
   position: absolute;
   top: 50%;
@@ -74,28 +73,30 @@
   outline-offset: 2px;
 }
 
-/* Stack the columns on smaller screens */
+/* Tablet and smaller: text on top, cards below */
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
   }
 }
 
-/* Phones: one card per row, button centered under the cards */
-@media (max-width: 700px) {
+/* Phone */
+@media (max-width: 767px) {
+  .section {
+    padding-block: 3rem;
+  }
+}
+
+/* Large desktop: wider text column and more space between cards */
+@media (min-width: 1440px) {
+  .layout {
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
   .cards {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .next {
-    top: auto;
-    right: 50%;
-    bottom: -1.5rem;
-    transform: translate(50%, 0);
-  }
-
-  .next:hover {
-    transform: translate(50%, 0) scale(1.08);
+    gap: 1.75rem;
   }
 }
 

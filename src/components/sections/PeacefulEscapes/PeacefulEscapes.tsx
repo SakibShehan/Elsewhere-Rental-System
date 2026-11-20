@@ -4,10 +4,8 @@ import Carousel from '@/components/ui/Carousel/Carousel'
 import { properties } from '@/data/property'
 import FavoriteButton from '@/features/favorites/FavoriteButton'
 import CollectionIntro from './CollectionIntro'
+import { useVisibleCount } from './useVisibleCount'
 import styles from './PeacefulEscapes.module.css'
-
-// How many cards are visible at once
-const VISIBLE_COUNT = 3
 
 // Takes `count` items starting at `start`, wrapping around the end of the list
 function getVisibleItems<T>(items: T[], start: number, count: number): T[] {
@@ -20,8 +18,11 @@ function getVisibleItems<T>(items: T[], start: number, count: number): T[] {
 }
 
 function PeacefulEscapes() {
+  // 1, 2 or 3 depending on the screen
+  const visibleCount = useVisibleCount()
+
   // The button is only needed when there are more cards than fit
-  const canRotate = properties.length > VISIBLE_COUNT
+  const canRotate = properties.length > visibleCount
 
   return (
     <section className={styles.section}>
@@ -40,8 +41,14 @@ function PeacefulEscapes() {
         >
           {({ index, next }) => (
             <>
-              <ul className={styles.cards}>
-                {getVisibleItems(properties, index, VISIBLE_COUNT).map(
+              {/* Columns come from the same number that picks the cards */}
+              <ul
+                className={styles.cards}
+                style={{
+                  gridTemplateColumns: `repeat(${visibleCount}, minmax(0, 1fr))`,
+                }}
+              >
+                {getVisibleItems(properties, index, visibleCount).map(
                   (property) => (
                     <li key={property.id} className={styles.item}>
                       <PropertyCard property={property}>

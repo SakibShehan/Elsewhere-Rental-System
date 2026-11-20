@@ -34,3 +34,23 @@
   width: 1px;
   background: var(--color-border);
 }
+
+/* Phone */
+@media (max-width: 640px) {
+  .section {
+    margin-top: -2rem;
+  }
+
+  .bar {
+    border-radius: var(--radius-lg);
+  }
+
+  /* The bar scrolls sideways; items stop neatly at the left edge */
+  .list {
+    scroll-snap-type: x proximity;
+  }
+
+  .cell {
+    scroll-snap-align: start;
+  }
+}

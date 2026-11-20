@@ -64,3 +64,13 @@
 .savedButton:hover {
   background: rgba(0, 0, 0, 0.08);
 }
+
+@media (max-width: 760px) {
+  .actions {
+    gap: 0.25rem;
+  }
+
+  .savedButton {
+    display: none;
+  }
+}

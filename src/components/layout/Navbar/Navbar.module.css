@@ -1,4 +1,4 @@
-/* Floats on top of the hero (the shared background trick) */
+/* Floats on top of the hero */
 .navbar {
   position: absolute;
   top: 0;
@@ -9,12 +9,18 @@
   color: var(--color-white);
 }
 
+/* Full-width row: logo at the left edge, buttons at the right edge */
 .inner {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
+  max-width: 1760px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 2.5vw, 2rem);
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -29,15 +35,11 @@
 
 .logoText {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 500;
 }
 
-/* Pushes everything after it to the right */
-.nav {
-  margin-right: auto;
-}
-
+/* Desktop links */
 .links {
   display: flex;
   align-items: center;
@@ -47,4 +49,153 @@
 
 .link:hover {
   opacity: 0.8;
+}
+
+/* Right side: pushed to the far right on every screen size */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Hamburger button (hidden on laptops and larger) */
+.menuButton {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  color: var(--color-black, #000000);
+}
+
+.menuButton:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.menuButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* The three bars: the middle one is the element, the other two are ::before and ::after */
+.burger,
+.burger::before,
+.burger::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 0.25s ease,
+    top 0.25s ease,
+    background 0.25s ease;
+}
+
+.burger {
+  position: relative;
+}
+
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.burger::before {
+  top: -6px;
+}
+
+.burger::after {
+  top: 6px;
+}
+
+/* Open: the middle bar disappears and the other two cross into an X */
+.burgerOpen {
+  background: transparent;
+}
+
+.burgerOpen::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burgerOpen::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Hamburger panel */
+.mobileMenu {
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  left: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text);
+  box-shadow: var(--shadow-soft);
+  animation: menu-in 0.2s ease both;
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+}
+
+.mobileLink:hover {
+  background: var(--color-cream);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tablet and phone: hide the full menu, show the hamburger */
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+}
+
+/* Laptop and larger: the panel never shows */
+@media (min-width: 1024px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+/* Phone: a little tighter */
+@media (max-width: 760px) {
+  .navbar {
+    padding-block: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileMenu {
+    animation: none;
+  }
+
+  .burger,
+  .burger::before,
+  .burger::after {
+    transition: none;
+  }
 }
