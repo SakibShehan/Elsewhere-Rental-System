@@ -16,7 +16,10 @@ function Navbar() {
   useOnClickOutside(headerRef, close)
 
   return (
-    <header ref={headerRef} className={styles.navbar}>
+    <header
+  ref={headerRef}
+  className={`${styles.navbar} ${isMenuOpen ? styles.navbarOpen : ''}`}
+>
       <div className={styles.inner}>
         <a href="/" className={styles.logo}>
           <img src={logoStar} alt="" className={styles.logoIcon} />

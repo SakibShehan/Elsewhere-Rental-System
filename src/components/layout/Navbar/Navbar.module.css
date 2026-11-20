@@ -1,5 +1,6 @@
 /* Floats on top of the hero */
 .navbar {
+  --bar-height: 5rem; /* height of the top row: the menu panel leaves this much room */
   position: absolute;
   top: 0;
   left: 0;
@@ -11,6 +12,8 @@
 
 /* Full-width row: logo at the left edge, buttons at the right edge */
 .inner {
+  position: relative;
+  z-index: 2; /* stays in front of the menu panel, so the X is clickable */
   display: flex;
   align-items: center;
   gap: clamp(1.5rem, 3vw, 3rem);
@@ -127,35 +130,44 @@
   transform: rotate(-45deg);
 }
 
-/* Hamburger panel */
+/* Menu panel: flush with the top, left and right edges of the screen */
 .mobileMenu {
   position: absolute;
-  top: calc(100% - 0.25rem);
-  left: 1rem;
-  right: 1rem;
-  padding: 0.5rem;
-  border-radius: var(--radius-md);
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  /* top padding = the navbar row, so the links start below the logo and the X */
+  padding: calc(var(--bar-height) + 0.5rem) clamp(1.5rem, 2.5vw, 2rem) 1.5rem;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   background: var(--color-white);
   color: var(--color-text);
   box-shadow: var(--shadow-soft);
-  animation: menu-in 0.2s ease both;
+  animation: menu-in 0.25s ease both;
+
+  /* For a full-screen menu instead, uncomment the next line: */
+  /* min-height: 100vh; */
+}
+
+.mobileMenu li + li {
+  border-top: 1px solid var(--color-border);
 }
 
 .mobileLink {
   display: block;
-  padding: 0.9rem 1rem;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
+  padding: 1rem 0.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
 }
 
 .mobileLink:hover {
-  background: var(--color-cream);
+  color: var(--color-muted);
 }
 
 @keyframes menu-in {
   from {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-1rem);
   }
   to {
     opacity: 1;
@@ -172,6 +184,15 @@
   .menuButton {
     display: grid;
   }
+
+  /* Menu open: the panel is white, so the logo must be dark to stay visible */
+  .navbarOpen .logoText {
+    color: var(--color-text);
+  }
+
+  .navbarOpen .logoIcon {
+    filter: brightness(0);
+  }
 }
 
 /* Laptop and larger: the panel never shows */
@@ -182,8 +203,9 @@
 }
 
 /* Phone: a little tighter */
-@media (max-width: 760px) {
+@media (max-width: 640px) {
   .navbar {
+    --bar-height: 4.5rem;
     padding-block: 1rem;
   }
 }

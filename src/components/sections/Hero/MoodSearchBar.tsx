@@ -1,6 +1,7 @@
 import type { FormEvent, RefObject } from 'react'
 import arrowRightIcon from '@/assets/icons/arrow-right.svg'
 import sparkleIcon from '@/assets/icons/sparkles.svg'
+import TypingPlaceholder from './TypingPlaceholder'
 import styles from './MoodSearchBar.module.css'
 
 interface MoodSearchBarProps {
@@ -16,6 +17,8 @@ function MoodSearchBar({
   onSubmit,
   inputRef,
 }: MoodSearchBarProps) {
+  const isEmpty = value === ''
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     // Stop the browser from reloading the page
     event.preventDefault()
@@ -26,21 +29,25 @@ function MoodSearchBar({
     <form className={styles.bar} onSubmit={handleSubmit} role="search">
       <img src={sparkleIcon} alt="" className={styles.sparkle} />
 
-      <input
-        ref={inputRef}
-        type="text"
-        className={styles.input}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        placeholder="e.g. I want a peaceful escape in nature..."
-        aria-label="Describe how you feel"
-      />
+      <div className={styles.inputWrap}>
+        <input
+          ref={inputRef}
+          type="text"
+          className={`${styles.input} ${isEmpty ? styles.inputEmpty : ''}`}
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          aria-label="Search by telling your mood or destination"
+        />
+
+        {/* Only while the bar is empty: typing removes it, clearing brings it back */}
+        {isEmpty && <TypingPlaceholder />}
+      </div>
 
       <button
         type="submit"
         className={styles.submit}
         aria-label="Search stays"
-        
+        disabled={value.trim() === ''}
       >
         <img src={arrowRightIcon} alt="" />
       </button>

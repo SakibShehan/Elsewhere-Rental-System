@@ -42,3 +42,16 @@
   height: 16px;
   filter: brightness(0) invert(1);
 }
+/* Holds the input and the typing animation on top of each other */
+.inputWrap {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Hide the real caret while the animated one is showing */
+.inputEmpty {
+  caret-color: transparent;
+}

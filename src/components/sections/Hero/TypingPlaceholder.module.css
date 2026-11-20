@@ -1,0 +1,50 @@
+/* Sits on top of the input, in the same place as normal text */
+.wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  pointer-events: none; /* clicks go through to the input */
+}
+
+/* "pre" keeps the spaces, so the caret moves over a space like it moves over a letter */
+.line {
+  white-space: pre;
+}
+
+/* The caret: a thin bar that shrinks to the middle and grows back */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  margin-left: 2px;
+  border-radius: 1px;
+  background: var(--color-navy-900);
+  vertical-align: middle;
+  animation: caret-pulse 1s ease-in-out infinite;
+}
+
+/* While letters appear or disappear, the caret stays still */
+.caretSolid {
+  animation: none;
+}
+
+@keyframes caret-pulse {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.08);
+  }
+}
+
+/* Same size as the bigger input text on laptops */
+@media (min-width: 1024px) {
+  .wrap {
+    font-size: 1.1rem;
+  }
+}
