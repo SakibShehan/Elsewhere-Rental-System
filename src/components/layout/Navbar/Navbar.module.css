@@ -1,13 +1,32 @@
-/* Floats on top of the hero */
+/* Fixed at the top: stays there while the page scrolls */
 .navbar {
   --bar-height: 5rem; /* height of the top row: the menu panel leaves this much room */
-  position: absolute;
+  --nav-icon-filter: brightness(0) invert(1); /* white icons over the photo */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   padding-block: 1.25rem;
+  background: transparent;
   color: var(--color-white);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    padding 0.3s ease;
+}
+
+/* After scrolling: white bar, black text, a bit smaller */
+.navbarScrolled {
+  --bar-height: 100rem;
+  --nav-icon-filter: brightness(0); /* black icons */
+  padding-block: 0.7rem;
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--color-black, #000000);
+  box-shadow: 0 2px 20px rgba(11, 22, 38, 0.12);
 }
 
 /* Full-width row: logo at the left edge, buttons at the right edge */
@@ -32,8 +51,9 @@
 
 .logoIcon {
   width: 36px;
-  height: 36px;
-  filter: brightness(0) invert(1);
+  height: 60px;
+  filter: var(--nav-icon-filter);
+  transition: filter 0.3s ease;
 }
 
 .logoText {
@@ -144,9 +164,6 @@
   color: var(--color-text);
   box-shadow: var(--shadow-soft);
   animation: menu-in 0.25s ease both;
-
-  /* For a full-screen menu instead, uncomment the next line: */
-  /* min-height: 100vh; */
 }
 
 .mobileMenu li + li {
@@ -186,12 +203,9 @@
   }
 
   /* Menu open: the panel is white, so the logo must be dark to stay visible */
-  .navbarOpen .logoText {
-    color: var(--color-text);
-  }
-
-  .navbarOpen .logoIcon {
-    filter: brightness(0);
+  .navbarOpen {
+    --nav-icon-filter: brightness(0);
+    color: var(--color-black, #000000);
   }
 }
 
@@ -208,10 +222,18 @@
     --bar-height: 4.5rem;
     padding-block: 1rem;
   }
+
+  .navbarScrolled {
+    --bar-height: 3.75rem;
+    padding-block: 0.6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .logoIcon,
   .mobileMenu {
+    transition: none;
     animation: none;
   }
 

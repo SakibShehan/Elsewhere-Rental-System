@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   align-items: center; /* content sits in the vertical middle of the hero */
-  min-height: clamp(720px, 60vh, 900px); /* taller: about 92% of the screen height */
+  min-height: clamp(720px, 60vh, 1000px);
   overflow: hidden;
   color: var(--hero-text);
 }
@@ -32,46 +32,82 @@
 
 /* Content: same left edge as the navbar logo */
 .content {
-  --field-width: min(100%, 1280px); /* how far right the search bar and pills reach */
+  --bar-width: min(100%, clamp(30rem, 45vw, 54rem)); /* width of the search bar */
   position: relative;
   width: 100%;
   max-width: 1760px;
   margin-inline: auto;
-  padding-inline: clamp(1rem, 2vw, 2rem);
-  padding-block: clamp(8rem, 14vh, 12rem); /* more space above and below */
+  padding-inline: clamp(1.5rem, 2.5vw, 2rem);
+  padding-block: clamp(8rem, 14vh, 12rem);
 }
 
 /* Heading block: as wide as its text, with the text centered inside it */
 .heading {
   width: fit-content;
-  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+  margin-bottom: clamp(2rem, 4vh, 3rem);
   text-align: center;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.28);
 }
 
+/* Small label with a line on each side */
 .eyebrow {
-  margin-bottom: 1.25rem;
-  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
-  letter-spacing: 0.35em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+  font-size: clamp(0.68rem, 0.85vw, 0.82rem);
+  font-weight: 300;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
-  opacity: 0.9;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.85;
+}
+
+/* The last letter also gets letter spacing: pull the right line back so both gaps match */
+.eyebrow::after {
+  margin-left: -0.4em;
 }
 
 .title {
-  font-size: clamp(2.75rem, 6.5vw, 6.5rem); /* bigger on large screens */
+  font-size: clamp(2.75rem, 5.5vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
 }
 
 .subtitle {
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 3vw, 3rem);
+  font-size: clamp(1.4rem, 2.6vw, 2.8rem);
   font-style: italic;
+  font-weight: 500;
 }
 
+/* Holds the text and the painted stroke under it */
 .accent {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 8px;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.swoosh {
+  position: absolute;
+  left: 0;
+  bottom: -0.32em;
+  width: 100%;
+  height: 0.3em;
+  fill: currentColor;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 /* Small mouse icon at the bottom of the hero */
@@ -121,8 +157,8 @@
   }
 
   .content {
+    --bar-width: 100%;
     padding-block: 8rem;
-    --field-width: 100%;
   }
 
   .image {
@@ -141,7 +177,17 @@
   }
 
   .eyebrow {
-    letter-spacing: 0.2em;
+    gap: 0.6rem;
+    letter-spacing: 0.22em;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    width: 1.1rem;
+  }
+
+  .eyebrow::after {
+    margin-left: -0.22em;
   }
 
   .image {

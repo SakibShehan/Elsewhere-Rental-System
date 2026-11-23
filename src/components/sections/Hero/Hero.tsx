@@ -31,10 +31,22 @@ function Hero() {
         <div className={styles.heading}>
           <p className={styles.eyebrow}>Find somewhere extraordinary</p>
           <h1 className={styles.title}>Tell us how you feel…</h1>
-          <p className={styles.subtitle}>
-            and we’ll help you find the{' '}
-            <span className={styles.accent}>perfect stay.</span>
-          </p>
+         <p className={styles.subtitle}>
+  and we’ll help you{' '}
+  <span className={styles.accent}>
+    find the perfect stay.
+    {/* Painted stroke: a filled shape, thick in the middle, thin at both ends */}
+    <svg
+      className={styles.swoosh}
+      viewBox="0 0 300 16"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M2 9 C70 5.5 170 4 296 6.5 C200 8 90 9.5 2 9 Z" />
+    </svg>
+  </span>
+</p>
         </div>
 
         <MoodSearchBar
@@ -49,7 +61,7 @@ function Hero() {
           onSelect={handleSuggestionSelect}
         />
       </div>
-       <div className={styles.scrollHint} aria-hidden="true" />
+       {/* <div className={styles.scrollHint} aria-hidden="true" /> */}
     </section>
   )
 }

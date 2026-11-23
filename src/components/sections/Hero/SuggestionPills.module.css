@@ -26,8 +26,8 @@
   padding: 0.5rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(10px);
+  /* background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px); */
   color: inherit;
   font-size: 0.8rem;
   transition: background 0.2s ease;

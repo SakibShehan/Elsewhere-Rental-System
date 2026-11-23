@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '@/app/store'
-
+import { loadSavedItems } from './favoritesStorage'
 // Define state of favourite properties. Each saved item has a propertyId and a timestamp 
 // Types
 export interface SavedItem {
@@ -14,8 +14,11 @@ interface FavoritesState {
 }
 
 // Initial state
+// const initialState: FavoritesState = {
+//   items: [],
+// }
 const initialState: FavoritesState = {
-  items: [],
+  items: loadSavedItems(),
 }
 
 // Slice for managing favorite properties
