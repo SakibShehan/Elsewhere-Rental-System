@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { FormEvent, RefObject } from 'react'
 import arrowRightIcon from '@/assets/icons/arrow-right.svg'
 import sparkleIcon from '@/assets/icons/sparkles.svg'
@@ -17,7 +18,11 @@ function MoodSearchBar({
   onSubmit,
   inputRef,
 }: MoodSearchBarProps) {
-  const isEmpty = value === ''
+  // Is the user inside the box?
+  const [isFocused, setIsFocused] = useState(false)
+
+  // The animation shows only while the box is empty and not clicked
+  const showAnimation = value === '' && !isFocused
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     // Stop the browser from reloading the page
@@ -27,20 +32,23 @@ function MoodSearchBar({
 
   return (
     <form className={styles.bar} onSubmit={handleSubmit} role="search">
-      <img src={sparkleIcon} alt="" className={styles.sparkle} />
+      <span className={styles.sparkleWrap}>
+        <img src={sparkleIcon} alt="" className={styles.sparkle} />
+      </span>
 
       <div className={styles.inputWrap}>
         <input
           ref={inputRef}
           type="text"
-          className={`${styles.input} ${isEmpty ? styles.inputEmpty : ''}`}
+          className={`${styles.input} ${showAnimation ? styles.inputEmpty : ''}`}
           value={value}
           onChange={(event) => onChange(event.target.value)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           aria-label="Search by telling your mood or destination"
         />
 
-        {/* Only while the bar is empty: typing removes it, clearing brings it back */}
-        {isEmpty && <TypingPlaceholder />}
+        {showAnimation && <TypingPlaceholder />}
       </div>
 
       <button
