@@ -1,0 +1,102 @@
+[
+  {
+    "id": 701,
+    "name": "Holiday Inn Express Hotel",
+    "location": "Orlando, Florida, USA",
+    "mood": "Family",
+    "rating": 4.6,
+    "reviewCount": 1340,
+    "pricePerNight": 165,
+    "categories": ["Hotels"]
+  },
+  {
+    "id": 702,
+    "name": "Casa Queen Suites Hotel",
+    "location": "Algarve, Portugal",
+    "mood": "Family",
+    "rating": 4.8,
+    "reviewCount": 785,
+    "pricePerNight": 230,
+    "categories": ["Hotels", "Resorts"]
+  },
+  {
+    "id": 703,
+    "name": "Storhaugen Gard Cabin",
+    "location": "Lillehammer, Norway",
+    "mood": "Family",
+    "rating": 4.8,
+    "reviewCount": 412,
+    "pricePerNight": 240,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 704,
+    "name": "Villa Taray House",
+    "location": "Mallorca, Spain",
+    "mood": "Family",
+    "rating": 4.9,
+    "reviewCount": 628,
+    "pricePerNight": 330,
+    "categories": ["Villas", "Beach Houses"]
+  },
+  {
+    "id": 705,
+    "name": "Sunbeam Family Pool Villa",
+    "location": "Seminyak, Bali, Indonesia",
+    "mood": "Family",
+    "rating": 4.8,
+    "reviewCount": 554,
+    "pricePerNight": 275,
+    "categories": ["Villas", "Resorts"]
+  },
+  {
+    "id": 706,
+    "name": "Lagoon Splash Resort",
+    "location": "Gold Coast, Australia",
+    "mood": "Family",
+    "rating": 4.7,
+    "reviewCount": 890,
+    "pricePerNight": 260,
+    "categories": ["Resorts", "Beach Houses"]
+  },
+  {
+    "id": 707,
+    "name": "Meadowbrook Garden House",
+    "location": "Lake Tahoe, California, USA",
+    "mood": "Family",
+    "rating": 4.8,
+    "reviewCount": 502,
+    "pricePerNight": 295,
+    "categories": ["Villas", "Nature"]
+  },
+  {
+    "id": 708,
+    "name": "Harborview Terrace Apartment",
+    "location": "San Diego, California, USA",
+    "mood": "Family",
+    "rating": 4.7,
+    "reviewCount": 467,
+    "pricePerNight": 250,
+    "categories": ["Apartments", "Beach Houses"]
+  },
+  {
+    "id": 709,
+    "name": "Pinecrest Treehouse & Lodge",
+    "location": "Whistler, Canada",
+    "mood": "Family",
+    "rating": 4.9,
+    "reviewCount": 640,
+    "pricePerNight": 345,
+    "categories": ["Cabins", "Resorts"]
+  },
+  {
+    "id": 710,
+    "name": "Bayfront Family Suites",
+    "location": "Phuket, Thailand",
+    "mood": "Family",
+    "rating": 4.7,
+    "reviewCount": 519,
+    "pricePerNight": 210,
+    "categories": ["Resorts", "Hotels"]
+  }
+]

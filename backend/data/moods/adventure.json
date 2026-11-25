@@ -1,0 +1,102 @@
+[
+  {
+    "id": 301,
+    "name": "Jarfjord Aurora Lodge",
+    "location": "Kirkenes, Norway",
+    "mood": "Adventure",
+    "rating": 4.9,
+    "reviewCount": 420,
+    "pricePerNight": 340,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 302,
+    "name": "Patagonia Ridge Basecamp",
+    "location": "El Chaltén, Argentina",
+    "mood": "Adventure",
+    "rating": 4.8,
+    "reviewCount": 560,
+    "pricePerNight": 230,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 303,
+    "name": "Canyon Rim Cliff Cabin",
+    "location": "Moab, Utah, USA",
+    "mood": "Adventure",
+    "rating": 4.8,
+    "reviewCount": 684,
+    "pricePerNight": 255,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 304,
+    "name": "Volcanic Lava Field Retreat",
+    "location": "Reykjanes, Iceland",
+    "mood": "Adventure",
+    "rating": 4.9,
+    "reviewCount": 495,
+    "pricePerNight": 315,
+    "categories": ["Villas", "Nature"]
+  },
+  {
+    "id": 305,
+    "name": "Highland Trail Stone Hut",
+    "location": "Isle of Skye, Scotland",
+    "mood": "Adventure",
+    "rating": 4.7,
+    "reviewCount": 376,
+    "pricePerNight": 190,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 306,
+    "name": "Andes Cloud Forest Lodge",
+    "location": "Sacred Valley, Peru",
+    "mood": "Adventure",
+    "rating": 4.8,
+    "reviewCount": 452,
+    "pricePerNight": 215,
+    "categories": ["Resorts", "Nature"]
+  },
+  {
+    "id": 307,
+    "name": "Surf & Reef Jungle Camp",
+    "location": "Siargao, Philippines",
+    "mood": "Adventure",
+    "rating": 4.7,
+    "reviewCount": 334,
+    "pricePerNight": 145,
+    "categories": ["Beach Houses", "Nature"]
+  },
+  {
+    "id": 308,
+    "name": "Glacier View Timber Chalet",
+    "location": "Banff, Canada",
+    "mood": "Adventure",
+    "rating": 4.9,
+    "reviewCount": 890,
+    "pricePerNight": 360,
+    "categories": ["Cabins", "Hotels"]
+  },
+  {
+    "id": 309,
+    "name": "Savanna Horizon Tented Suite",
+    "location": "Serengeti, Tanzania",
+    "mood": "Adventure",
+    "rating": 4.9,
+    "reviewCount": 610,
+    "pricePerNight": 490,
+    "categories": ["Resorts", "Luxury"]
+  },
+  {
+    "id": 310,
+    "name": "Atlas Trekker Kasbah",
+    "location": "Imlil, Morocco",
+    "mood": "Adventure",
+    "rating": 4.7,
+    "reviewCount": 298,
+    "pricePerNight": 150,
+    "categories": ["Hotels", "Boutique"]
+  }
+]

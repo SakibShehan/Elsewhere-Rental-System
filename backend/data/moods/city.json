@@ -1,0 +1,102 @@
+[
+  {
+    "id": 601,
+    "name": "The Reid Grand Hotel",
+    "location": "Edinburgh, Scotland",
+    "mood": "City",
+    "rating": 4.9,
+    "reviewCount": 1080,
+    "pricePerNight": 340,
+    "categories": ["Hotels", "Luxury"]
+  },
+  {
+    "id": 602,
+    "name": "SLL Urban Apartment",
+    "location": "Seoul, South Korea",
+    "mood": "City",
+    "rating": 4.8,
+    "reviewCount": 645,
+    "pricePerNight": 195,
+    "categories": ["Apartments", "Boutique"]
+  },
+  {
+    "id": 603,
+    "name": "Roundabout OSAKA Apartment",
+    "location": "Osaka, Japan",
+    "mood": "City",
+    "rating": 4.8,
+    "reviewCount": 572,
+    "pricePerNight": 185,
+    "categories": ["Apartments", "Boutique"]
+  },
+  {
+    "id": 604,
+    "name": "Engawa Nakano Apartment",
+    "location": "Tokyo, Japan",
+    "mood": "City",
+    "rating": 4.7,
+    "reviewCount": 439,
+    "pricePerNight": 210,
+    "categories": ["Apartments", "Boutique"]
+  },
+  {
+    "id": 605,
+    "name": "Cortina View Apartment",
+    "location": "Milan, Italy",
+    "mood": "City",
+    "rating": 4.8,
+    "reviewCount": 498,
+    "pricePerNight": 265,
+    "categories": ["Apartments", "Luxury"]
+  },
+  {
+    "id": 606,
+    "name": "SoHo Gallery Penthouse",
+    "location": "New York, USA",
+    "mood": "City",
+    "rating": 4.9,
+    "reviewCount": 910,
+    "pricePerNight": 480,
+    "categories": ["Apartments", "Luxury"]
+  },
+  {
+    "id": 607,
+    "name": "Eixample Modernist Suite",
+    "location": "Barcelona, Spain",
+    "mood": "City",
+    "rating": 4.7,
+    "reviewCount": 564,
+    "pricePerNight": 220,
+    "categories": ["Apartments", "Hotels"]
+  },
+  {
+    "id": 608,
+    "name": "Mitte Courtyard Hotel",
+    "location": "Berlin, Germany",
+    "mood": "City",
+    "rating": 4.7,
+    "reviewCount": 482,
+    "pricePerNight": 190,
+    "categories": ["Hotels", "Boutique"]
+  },
+  {
+    "id": 609,
+    "name": "Canal District Boutique Loft",
+    "location": "Amsterdam, Netherlands",
+    "mood": "City",
+    "rating": 4.8,
+    "reviewCount": 619,
+    "pricePerNight": 255,
+    "categories": ["Apartments", "Boutique"]
+  },
+  {
+    "id": 610,
+    "name": "Skyline Atrium Hotel",
+    "location": "Singapore",
+    "mood": "City",
+    "rating": 4.9,
+    "reviewCount": 1150,
+    "pricePerNight": 390,
+    "categories": ["Hotels", "Luxury"]
+  }
+]

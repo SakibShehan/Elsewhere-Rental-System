@@ -1,0 +1,102 @@
+[
+  {
+    "id": 401,
+    "name": "Ocean Villa",
+    "location": "Maldives",
+    "mood": "Beach",
+    "rating": 4.8,
+    "reviewCount": 856,
+    "pricePerNight": 420,
+    "categories": ["Villas", "Luxury"]
+  },
+  {
+    "id": 402,
+    "name": "El Paraíso Beach House",
+    "location": "Tulum, Mexico",
+    "mood": "Beach",
+    "rating": 4.8,
+    "reviewCount": 712,
+    "pricePerNight": 310,
+    "categories": ["Beach Houses", "Boutique"]
+  },
+  {
+    "id": 403,
+    "name": "Seacliff Ocean House",
+    "location": "Byron Bay, Australia",
+    "mood": "Beach",
+    "rating": 4.9,
+    "reviewCount": 589,
+    "pricePerNight": 375,
+    "categories": ["Beach Houses", "Luxury"]
+  },
+  {
+    "id": 404,
+    "name": "Andalusian Sea House",
+    "location": "Marbella, Spain",
+    "mood": "Beach",
+    "rating": 4.7,
+    "reviewCount": 463,
+    "pricePerNight": 290,
+    "categories": ["Beach Houses", "Villas"]
+  },
+  {
+    "id": 405,
+    "name": "Emerald Faarufushi Resort",
+    "location": "Raa Atoll, Maldives",
+    "mood": "Beach",
+    "rating": 4.9,
+    "reviewCount": 940,
+    "pricePerNight": 610,
+    "categories": ["Resorts", "Luxury"]
+  },
+  {
+    "id": 406,
+    "name": "Coral Sands Bungalow",
+    "location": "Maui, Hawaii, USA",
+    "mood": "Beach",
+    "rating": 4.8,
+    "reviewCount": 674,
+    "pricePerNight": 395,
+    "categories": ["Beach Houses", "Resorts"]
+  },
+  {
+    "id": 407,
+    "name": "Turquoise Lagoon Villa",
+    "location": "Phuket, Thailand",
+    "mood": "Beach",
+    "rating": 4.7,
+    "reviewCount": 530,
+    "pricePerNight": 245,
+    "categories": ["Villas", "Resorts"]
+  },
+  {
+    "id": 408,
+    "name": "White Dune Coastal Suite",
+    "location": "Comporta, Portugal",
+    "mood": "Beach",
+    "rating": 4.8,
+    "reviewCount": 412,
+    "pricePerNight": 280,
+    "categories": ["Beach Houses", "Boutique"]
+  },
+  {
+    "id": 409,
+    "name": "Palm Bay Shorefront Residence",
+    "location": "St. Lucia, Caribbean",
+    "mood": "Beach",
+    "rating": 4.9,
+    "reviewCount": 518,
+    "pricePerNight": 450,
+    "categories": ["Villas", "Beach Houses"]
+  },
+  {
+    "id": 410,
+    "name": "Azure Cove Sand House",
+    "location": "Amorgos, Greece",
+    "mood": "Beach",
+    "rating": 4.7,
+    "reviewCount": 305,
+    "pricePerNight": 215,
+    "categories": ["Beach Houses", "Boutique"]
+  }
+]

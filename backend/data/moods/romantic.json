@@ -1,0 +1,102 @@
+[
+  {
+    "id": 101,
+    "name": "PoolView",
+    "location": "Bali, Indonesia",
+    "mood": "Romantic",
+    "rating": 4.8,
+    "reviewCount": 824,
+    "pricePerNight": 400,
+    "categories": ["Villas", "Luxury"]
+  },
+  {
+    "id": 102,
+    "name": "Santorini Caldera Suite",
+    "location": "Oia, Greece",
+    "mood": "Romantic",
+    "rating": 4.9,
+    "reviewCount": 1140,
+    "pricePerNight": 520,
+    "categories": ["Hotels", "Boutique"]
+  },
+  {
+    "id": 103,
+    "name": "Moonlight Overwater Bungalow",
+    "location": "Bora Bora, French Polynesia",
+    "mood": "Romantic",
+    "rating": 4.9,
+    "reviewCount": 690,
+    "pricePerNight": 780,
+    "categories": ["Resorts", "Luxury"]
+  },
+  {
+    "id": 104,
+    "name": "Velvet Vineyard Cottage",
+    "location": "Tuscany, Italy",
+    "mood": "Romantic",
+    "rating": 4.8,
+    "reviewCount": 512,
+    "pricePerNight": 310,
+    "categories": ["Villas", "Nature"]
+  },
+  {
+    "id": 105,
+    "name": "Candlelight Canal Loft",
+    "location": "Venice, Italy",
+    "mood": "Romantic",
+    "rating": 4.7,
+    "reviewCount": 438,
+    "pricePerNight": 295,
+    "categories": ["Apartments", "Boutique"]
+  },
+  {
+    "id": 106,
+    "name": "Amalfi Sunset Terrace",
+    "location": "Positano, Italy",
+    "mood": "Romantic",
+    "rating": 4.9,
+    "reviewCount": 975,
+    "pricePerNight": 465,
+    "categories": ["Villas", "Beach Houses"]
+  },
+  {
+    "id": 107,
+    "name": "Kyoto Lanterne Ryokan",
+    "location": "Kyoto, Japan",
+    "mood": "Romantic",
+    "rating": 4.9,
+    "reviewCount": 615,
+    "pricePerNight": 380,
+    "categories": ["Hotels", "Boutique"]
+  },
+  {
+    "id": 108,
+    "name": "Starlight Desert Dome",
+    "location": "Wadi Rum, Jordan",
+    "mood": "Romantic",
+    "rating": 4.8,
+    "reviewCount": 342,
+    "pricePerNight": 260,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 109,
+    "name": "Lake Como Villa Belvedere",
+    "location": "Bellagio, Italy",
+    "mood": "Romantic",
+    "rating": 4.9,
+    "reviewCount": 804,
+    "pricePerNight": 550,
+    "categories": ["Villas", "Luxury"]
+  },
+  {
+    "id": 110,
+    "name": "Parisian Rooftop Atelier",
+    "location": "Paris, France",
+    "mood": "Romantic",
+    "rating": 4.7,
+    "reviewCount": 529,
+    "pricePerNight": 330,
+    "categories": ["Apartments", "Boutique"]
+  }
+]

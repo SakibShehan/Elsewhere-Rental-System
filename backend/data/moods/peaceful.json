@@ -1,0 +1,102 @@
+[
+  {
+    "id": 201,
+    "name": "Forest Cabin Retreat",
+    "location": "British Columbia, Canada",
+    "mood": "Peaceful",
+    "rating": 4.9,
+    "reviewCount": 1200,
+    "pricePerNight": 180,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 202,
+    "name": "Stillwater Cedar Sanctuary",
+    "location": "Hokkaido, Japan",
+    "mood": "Peaceful",
+    "rating": 4.9,
+    "reviewCount": 487,
+    "pricePerNight": 270,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 203,
+    "name": "Yash Nature Resort",
+    "location": "Ubud, Indonesia",
+    "mood": "Peaceful",
+    "rating": 4.8,
+    "reviewCount": 730,
+    "pricePerNight": 225,
+    "categories": ["Resorts", "Nature"]
+  },
+  {
+    "id": 204,
+    "name": "Whispering Pines Lodge",
+    "location": "Stowe, Vermont, USA",
+    "mood": "Peaceful",
+    "rating": 4.7,
+    "reviewCount": 612,
+    "pricePerNight": 210,
+    "categories": ["Cabins", "Hotels"]
+  },
+  {
+    "id": 205,
+    "name": "Silent Meadow Farmhouse",
+    "location": "Cotswolds, United Kingdom",
+    "mood": "Peaceful",
+    "rating": 4.8,
+    "reviewCount": 544,
+    "pricePerNight": 240,
+    "categories": ["Villas", "Nature"]
+  },
+  {
+    "id": 206,
+    "name": "Nordic Fjord Glass House",
+    "location": "Aurland, Norway",
+    "mood": "Peaceful",
+    "rating": 4.9,
+    "reviewCount": 398,
+    "pricePerNight": 350,
+    "categories": ["Cabins", "Luxury"]
+  },
+  {
+    "id": 207,
+    "name": "Bamboo Mist Pavilion",
+    "location": "Chiang Mai, Thailand",
+    "mood": "Peaceful",
+    "rating": 4.8,
+    "reviewCount": 465,
+    "pricePerNight": 165,
+    "categories": ["Resorts", "Nature"]
+  },
+  {
+    "id": 208,
+    "name": "Lavender Hill Stone House",
+    "location": "Provence, France",
+    "mood": "Peaceful",
+    "rating": 4.8,
+    "reviewCount": 389,
+    "pricePerNight": 260,
+    "categories": ["Villas", "Boutique"]
+  },
+  {
+    "id": 209,
+    "name": "Solitude Cove Boathouse",
+    "location": "Lake Wanaka, New Zealand",
+    "mood": "Peaceful",
+    "rating": 4.9,
+    "reviewCount": 318,
+    "pricePerNight": 320,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 210,
+    "name": "Zen Garden Courtyard Villa",
+    "location": "Udaipur, India",
+    "mood": "Peaceful",
+    "rating": 4.7,
+    "reviewCount": 506,
+    "pricePerNight": 195,
+    "categories": ["Villas", "Boutique"]
+  }
+]

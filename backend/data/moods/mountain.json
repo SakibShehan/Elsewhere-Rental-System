@@ -1,0 +1,102 @@
+[
+  {
+    "id": 501,
+    "name": "Cliffside Villa",
+    "location": "Amalfi Coast, Italy",
+    "mood": "Mountain",
+    "rating": 4.9,
+    "reviewCount": 742,
+    "pricePerNight": 360,
+    "categories": ["Villas", "Luxury"]
+  },
+  {
+    "id": 502,
+    "name": "Hardanger Panorama Cabin",
+    "location": "Hardangerfjord, Norway",
+    "mood": "Mountain",
+    "rating": 4.9,
+    "reviewCount": 528,
+    "pricePerNight": 310,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 503,
+    "name": "Rosemead Alpine Hotel",
+    "location": "Zermatt, Switzerland",
+    "mood": "Mountain",
+    "rating": 4.8,
+    "reviewCount": 815,
+    "pricePerNight": 440,
+    "categories": ["Hotels", "Luxury"]
+  },
+  {
+    "id": 504,
+    "name": "Flåm Retreat Cabin",
+    "location": "Flåm, Norway",
+    "mood": "Mountain",
+    "rating": 4.8,
+    "reviewCount": 469,
+    "pricePerNight": 250,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 505,
+    "name": "Dolomites Peak Chalet",
+    "location": "Val Gardena, Italy",
+    "mood": "Mountain",
+    "rating": 4.9,
+    "reviewCount": 632,
+    "pricePerNight": 370,
+    "categories": ["Cabins", "Hotels"]
+  },
+  {
+    "id": 506,
+    "name": "Blue Ridge Timber Lodge",
+    "location": "Asheville, North Carolina, USA",
+    "mood": "Mountain",
+    "rating": 4.7,
+    "reviewCount": 594,
+    "pricePerNight": 205,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 507,
+    "name": "Himalayan Cloud Ridge Villa",
+    "location": "Manali, India",
+    "mood": "Mountain",
+    "rating": 4.8,
+    "reviewCount": 478,
+    "pricePerNight": 175,
+    "categories": ["Villas", "Nature"]
+  },
+  {
+    "id": 508,
+    "name": "Chamonix Summit Residence",
+    "location": "Chamonix, France",
+    "mood": "Mountain",
+    "rating": 4.8,
+    "reviewCount": 551,
+    "pricePerNight": 335,
+    "categories": ["Apartments", "Hotels"]
+  },
+  {
+    "id": 509,
+    "name": "Rocky Crest Lookout Cabin",
+    "location": "Breckenridge, Colorado, USA",
+    "mood": "Mountain",
+    "rating": 4.7,
+    "reviewCount": 620,
+    "pricePerNight": 275,
+    "categories": ["Cabins", "Nature"]
+  },
+  {
+    "id": 510,
+    "name": "Carpathian Pine Sanctuary",
+    "location": "Brașov, Romania",
+    "mood": "Mountain",
+    "rating": 4.8,
+    "reviewCount": 367,
+    "pricePerNight": 155,
+    "categories": ["Cabins", "Boutique"]
+  }
+]
