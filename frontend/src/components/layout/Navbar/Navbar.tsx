@@ -10,7 +10,11 @@ import styles from './Navbar.module.css'
 
 // The bar turns white after about one screen of scrolling: just after the hero
 const afterFirstScroll = () => 10
-function Navbar() {
+interface NavbarProps {
+  variant?: 'overlay' | 'solid'
+}
+
+function Navbar({ variant = 'overlay' }: NavbarProps) {
   // Hamburger menu: open or closed
   const { value: isMenuOpen, toggle, close } = useToggle()
   const headerRef = useRef<HTMLElement>(null)
@@ -23,9 +27,14 @@ const isScrolled = useScrolled(afterFirstScroll)
   return (
     <header
       ref={headerRef}
-      className={`${styles.navbar} ${isScrolled ? styles.navbarScrolled : ''} ${
-        isMenuOpen ? styles.navbarOpen : ''
-      }`}
+      className={[
+        styles.navbar,
+        variant === 'solid' ? styles.navbarSolid : '',
+        isScrolled ? styles.navbarScrolled : '',
+        isMenuOpen ? styles.navbarOpen : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
     >
       <div className={styles.inner}>
         <a href="/" className={styles.logo}>

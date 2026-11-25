@@ -5,7 +5,21 @@ import MoodSearchBar from './MoodSearchBar'
 import SuggestionPills from './SuggestionPills'
 import styles from './Hero.module.css'
 
-function Hero() {
+interface HeroProps {
+  moods: string[]
+  moodError: string | null
+  isSearching: boolean
+  searchError: string | null
+  onSearch: (mood: string) => void
+}
+
+function Hero({
+  moods,
+  moodError,
+  isSearching,
+  searchError,
+  onSearch,
+}: HeroProps) {
   // The text in the search bar
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
@@ -16,9 +30,9 @@ function Hero() {
     inputRef.current?.focus()
   }
 
-  // Temporary: real search comes in commit 5
   function handleSearch() {
-    console.log('Search:', query)
+    if (isSearching) return
+    onSearch(query.trim())
   }
 
   return (
@@ -51,6 +65,8 @@ function Hero() {
 
         <MoodSearchBar
           value={query}
+          moods={moods}
+          isSearching={isSearching}
           onChange={setQuery}
           onSubmit={handleSearch}
           inputRef={inputRef}
@@ -60,6 +76,9 @@ function Hero() {
           suggestions={suggestions}
           onSelect={handleSuggestionSelect}
         />
+        {isSearching && <p role="status">Finding the right mood...</p>}
+        {searchError && <p role="alert">{searchError}</p>}
+        {moodError && <p role="status">{moodError}</p>}
       </div>
        {/* <div className={styles.scrollHint} aria-hidden="true" /> */}
     </section>

@@ -4,6 +4,7 @@ import express from 'express'
 import type { ErrorRequestHandler } from 'express'
 import fs from 'node:fs'
 import path from 'node:path'
+import aiRoutes from './routes/ai.routes'
 import propertiesRoutes from './routes/properties.routes'
 import testRoutes from './routes/test.routes'
 import { getMoods } from './services/moods.service'
@@ -37,6 +38,7 @@ app.use(express.json())
 
 // 1. API routes: /api/...
 app.use('/api', testRoutes)
+app.use('/api/ai', aiRoutes)
 app.use('/api', propertiesRoutes)
 
 // 2. Unknown /api address: answer with JSON, not with the web page
@@ -75,8 +77,13 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
   console.log(`Moods loaded: ${getMoods().join(', ')}`)
 
-  if (!process.env.GEMINI_API_KEY) {
-    console.warn('GEMINI_API_KEY is not set: AI search will not work yet')
+  if (
+    !process.env.LLM_PROVIDER ||
+    !process.env.LLM_MODEL ||
+    !process.env.LLM_API_KEY ||
+    !process.env.LLM_BASE_URL
+  ) {
+    console.warn('LLM configuration is incomplete: AI search will not work yet')
   }
   if (!fs.existsSync(frontendDist)) {
     console.warn('Frontend not built yet: run "npm run build" inside frontend/')

@@ -7,22 +7,22 @@ import type { Suggestion } from '@/types/search'
 export const suggestions: Suggestion[] = [
   {
     label: 'A romantic getaway',
-    query: 'I want a romantic getaway',
+    query: 'romantic',
     icon: leafIcon,
   },
   {
     label: 'An adventure in the mountains',
-    query: 'I want an adventure in the mountains',
+    query: 'adventure',
     icon: mountainIcon,
   },
   {
     label: 'A beach holiday',
-    query: 'I want a beach holiday',
+    query: 'beach',
     icon: palmIcon,
   },
   {
-    label: 'A relaxing spa retreat',
-    query: 'I want a relaxing spa retreat',
+    label: 'A peaceful escape',
+    query: 'peaceful',
     icon: spaIcon,
   },
 ]

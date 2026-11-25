@@ -29,6 +29,18 @@
   box-shadow: 0 2px 20px rgba(11, 22, 38, 0.12);
 }
 
+/* Results pages have a light background, so keep the navbar readable at the top. */
+.navbarSolid {
+  --bar-height: 5rem;
+  --nav-icon-filter: brightness(0);
+  padding-block: 0.7rem;
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: var(--color-navy-900);
+  box-shadow: 0 2px 20px rgba(11, 22, 38, 0.12);
+}
+
 /* Full-width row: logo at the left edge, buttons at the right edge */
 .inner {
   position: relative;
@@ -224,6 +236,11 @@
   }
 
   .navbarScrolled {
+    --bar-height: 3.75rem;
+    padding-block: 0.6rem;
+  }
+
+  .navbarSolid {
     --bar-height: 3.75rem;
     padding-block: 0.6rem;
   }

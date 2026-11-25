@@ -7,6 +7,8 @@ import styles from './MoodSearchBar.module.css'
 
 interface MoodSearchBarProps {
   value: string
+  moods: string[]
+  isSearching: boolean
   onChange: (value: string) => void
   onSubmit: () => void
   inputRef: RefObject<HTMLInputElement | null>
@@ -14,6 +16,8 @@ interface MoodSearchBarProps {
 
 function MoodSearchBar({
   value,
+  moods,
+  isSearching,
   onChange,
   onSubmit,
   inputRef,
@@ -46,7 +50,13 @@ function MoodSearchBar({
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           aria-label="Search by telling your mood or destination"
+          list="available-moods"
         />
+        <datalist id="available-moods">
+          {moods.map((mood) => (
+            <option key={mood} value={mood} />
+          ))}
+        </datalist>
 
         {showAnimation && <TypingPlaceholder />}
       </div>
@@ -55,7 +65,7 @@ function MoodSearchBar({
         type="submit"
         className={styles.submit}
         aria-label="Search stays"
-        disabled={value.trim() === ''}
+        disabled={value.trim() === '' || isSearching}
       >
         <img src={arrowRightIcon} alt="" />
       </button>
