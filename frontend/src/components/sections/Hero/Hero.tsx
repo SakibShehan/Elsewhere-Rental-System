@@ -1,21 +1,19 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import heroImage from '@/assets/images/Santorini Sunset Terrace View.png'
 import { suggestions } from '@/data/suggestions'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { recordSearchPrompt, selectSearchPrompts } from '@/features/searchHistory/searchHistorySlice'
 import MoodSearchBar from './MoodSearchBar'
 import SuggestionPills from './SuggestionPills'
 import styles from './Hero.module.css'
 
 interface HeroProps {
-  moods: string[]
-  moodError: string | null
   isSearching: boolean
   searchError: string | null
   onSearch: (mood: string) => void
 }
 
 function Hero({
-  moods,
-  moodError,
   isSearching,
   searchError,
   onSearch,
@@ -23,16 +21,31 @@ function Hero({
   // The text in the search bar
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
+  const dispatch = useAppDispatch()
+  const searchPrompts = useAppSelector(selectSearchPrompts)
 
-  // Pill click: fill the search bar and focus it
-  function handleSuggestionSelect(text: string) {
-    setQuery(text)
+  useEffect(() => {
+    function resetSearchOnPageShow() {
+      setQuery('')
+      inputRef.current?.blur()
+    }
+
+    window.addEventListener('pageshow', resetSearchOnPageShow)
+    return () => window.removeEventListener('pageshow', resetSearchOnPageShow)
+  }, [])
+
+  function handleSuggestionSelect(prompt: string) {
+    setQuery(prompt)
     inputRef.current?.focus()
   }
 
   function handleSearch() {
     if (isSearching) return
-    onSearch(query.trim())
+    const prompt = query.trim()
+    if (!prompt) return
+
+    dispatch(recordSearchPrompt(prompt))
+    onSearch(prompt)
   }
 
   return (
@@ -65,10 +78,11 @@ function Hero({
 
         <MoodSearchBar
           value={query}
-          moods={moods}
+          searchPrompts={searchPrompts}
           isSearching={isSearching}
           onChange={setQuery}
           onSubmit={handleSearch}
+          onSelect={setQuery}
           inputRef={inputRef}
         />
 
@@ -76,9 +90,9 @@ function Hero({
           suggestions={suggestions}
           onSelect={handleSuggestionSelect}
         />
+
         {isSearching && <p role="status">Finding the right mood...</p>}
         {searchError && <p role="alert">{searchError}</p>}
-        {moodError && <p role="status">{moodError}</p>}
       </div>
        {/* <div className={styles.scrollHint} aria-hidden="true" /> */}
     </section>

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import type { FormEvent, RefObject } from 'react'
+import { useMemo, useState } from 'react'
+import type { FocusEvent, FormEvent, RefObject } from 'react'
 import arrowRightIcon from '@/assets/icons/arrow-right.svg'
 import sparkleIcon from '@/assets/icons/sparkles.svg'
 import TypingPlaceholder from './TypingPlaceholder'
@@ -7,35 +7,56 @@ import styles from './MoodSearchBar.module.css'
 
 interface MoodSearchBarProps {
   value: string
-  moods: string[]
+  searchPrompts: string[]
   isSearching: boolean
   onChange: (value: string) => void
   onSubmit: () => void
+  onSelect: (value: string) => void
   inputRef: RefObject<HTMLInputElement | null>
 }
 
 function MoodSearchBar({
   value,
-  moods,
+  searchPrompts,
   isSearching,
   onChange,
   onSubmit,
+  onSelect,
   inputRef,
 }: MoodSearchBarProps) {
-  // Is the user inside the box?
   const [isFocused, setIsFocused] = useState(false)
-
-  // The animation shows only while the box is empty and not clicked
   const showAnimation = value === '' && !isFocused
+  const matchingPrompts = useMemo(() => {
+    const normalizedQuery = value.trim().toLocaleLowerCase()
+
+    return normalizedQuery
+      ? searchPrompts.filter((prompt) =>
+          prompt.toLocaleLowerCase().includes(normalizedQuery),
+        )
+      : searchPrompts
+  }, [searchPrompts, value])
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    // Stop the browser from reloading the page
     event.preventDefault()
     onSubmit()
   }
 
+  function handleBlur(event: FocusEvent<HTMLFormElement>) {
+    if (
+      !(event.relatedTarget instanceof Node) ||
+      !event.currentTarget.contains(event.relatedTarget)
+    ) {
+      setIsFocused(false)
+    }
+  }
+
   return (
-    <form className={styles.bar} onSubmit={handleSubmit} role="search">
+    <form
+      className={styles.bar}
+      onSubmit={handleSubmit}
+      onBlur={handleBlur}
+      role="search"
+    >
       <span className={styles.sparkleWrap}>
         <img src={sparkleIcon} alt="" className={styles.sparkle} />
       </span>
@@ -48,15 +69,11 @@ function MoodSearchBar({
           value={value}
           onChange={(event) => onChange(event.target.value)}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
           aria-label="Search by telling your mood or destination"
-          list="available-moods"
+          aria-autocomplete="list"
+          aria-expanded={isFocused && matchingPrompts.length > 0}
+          aria-controls="search-prompt-suggestions"
         />
-        <datalist id="available-moods">
-          {moods.map((mood) => (
-            <option key={mood} value={mood} />
-          ))}
-        </datalist>
 
         {showAnimation && <TypingPlaceholder />}
       </div>
@@ -69,6 +86,30 @@ function MoodSearchBar({
       >
         <img src={arrowRightIcon} alt="" />
       </button>
+      {isFocused && matchingPrompts.length > 0 && (
+        <ul
+          id="search-prompt-suggestions"
+          className={styles.suggestions}
+          role="list"
+          aria-label="Previously searched prompts"
+        >
+          {matchingPrompts.map((prompt) => (
+            <li key={prompt}>
+              <button
+                type="button"
+                className={styles.suggestion}
+                onMouseDown={(event) => event.preventDefault()}
+                onClick={() => {
+                  onSelect(prompt)
+                  inputRef.current?.focus()
+                }}
+              >
+                {prompt}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </form>
   )
 }
